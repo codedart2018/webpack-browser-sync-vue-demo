@@ -27,6 +27,7 @@
   "devDependencies": {
     "autoprefixer": "^6.4.1",
     "browser-sync": "^2.15.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.22.0",
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.6.1",
