@@ -1,0 +1,5 @@
+{
+ "presets": ["es2015", "stage-0"],
+ "plugins": ["transform-runtime"]
+}
+//babel 相关文档 http://www.jianshu.com/p/ff7e0de573a9

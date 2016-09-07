@@ -11,12 +11,27 @@
     "url": "git+https://github.com/myxingke/webpack-browser-sync-vue-demo.git"
   },
   "keywords": [
-    "vue"
+    "vue",
+    "webpack",
+    "browser-sync"
   ],
   "author": "myxingke@126.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/myxingke/webpack-browser-sync-vue-demo/issues"
   },
-  "homepage": "https://github.com/myxingke/webpack-browser-sync-vue-demo#readme"
+  "homepage": "https://github.com/myxingke/webpack-browser-sync-vue-demo#readme",
+  "dependencies": {
+    "vue": "^1.0.26"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.4.1",
+    "browser-sync": "^2.15.0",
+    "html-webpack-plugin": "^2.22.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-dev-server": "^1.15.1",
+    "webpack-hot-middleware": "^2.12.2"
+  },
+  "home": "http://www.yongchuan.cc"
 }
