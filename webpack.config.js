@@ -12,9 +12,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 const minPostfix = isProd ? '.min' : '';
-const minify = isProd ? 'minimize' : '';
-const hash = '[hash:7]';
-const fs = require('fs');
+const hash = '[hash:8]';
 
 /**
  * @入口文件
@@ -36,12 +34,10 @@ const devEntry = [
     entry,
 ];
 /**
- * 构建后文件的输出 当目录不存在的时候创建它
+ * 构建后文件的输出目录
  */
 const outputPath = 'dist';
-if (!fs.existsSync(outputPath)) {
-    fs.mkdirSync(outputPath);
-}
+
 /**
  * @插件
  */
@@ -63,9 +59,12 @@ const basePlugins = [
             collapseWhitespace: true
         } : null,
     }),
+    //提公用js到common.js文件中
+    new webpack.optimize.CommonsChunkPlugin('js/common.js'),
 ];
 
 const envPlugins = isProd ? [
+    // ExtractTextPlugin 分离CSS文件
     new ExtractTextPlugin(`css/style.${hash}${minPostfix}.css`, {
         allChunks: true
     }),
@@ -87,7 +86,9 @@ const envPlugins = isProd ? [
  */
 module.exports = {
     debug: !isProd,
-    devtool: !isProd ? '#eval' : null,
+    //devtool: !isProd ? '#eval' : null,
+    //配置生成Source Maps，选择合适的选项
+    devtool: 'eval-source-map',
     //入口文件
     entry: isProd ? entry : devEntry,
     //输出目录 输出文件带 hash数字 如果输出多个 可以循环来着
@@ -96,7 +97,6 @@ module.exports = {
         filename: `js/app.${hash}${minPostfix}.js`,
         publicPath: '/'
     },
-
     module: {
         // 一些特定的编译规则
         loaders: [
@@ -115,9 +115,13 @@ module.exports = {
             }
         ]
     },
-
+    resolve: {
+        //自动扩展文件后缀名，意味着我们require模块可以省略不写后缀名
+        extensions: ['', '.js', '.vue'],
+        //模块别名定义，方便后续直接引用别名，无须多写长长的地址
+        //alias: {}
+    },
     plugins: basePlugins.concat(envPlugins),
-
     //浏览器前缀
-    postcss: [autoprefixer({browsers: ['> 1%', 'last 2 versions', 'ie 10']})],
+    postcss: [autoprefixer({browsers: ['> 1%', 'last 2 versions', 'ie 10']})]
 };

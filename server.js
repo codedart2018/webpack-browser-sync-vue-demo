@@ -18,9 +18,9 @@ bs.init({
     logPrefix: 'AMT',
     server: {
         //指定服务器启动根目录
-        //baseDir: [
-            //'dist',
-        //],
+        baseDir: [
+            'dist',
+        ],
         middleware: [
             webpackDevMiddleware(bundler, {
                 publicPath: webpackConfig.output.publicPath,
