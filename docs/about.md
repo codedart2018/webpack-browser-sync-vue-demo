@@ -13,6 +13,9 @@
 #### http://cn.redux.js.org/ redux 中文官网
 #### http://imweb.io/topic/567fe68e834878282edc7f9d redux 一些说明
 
+### 各类报错说明
+##### 开发环境报错Cannot read property 'indexOf' of undefined 原因： vue-hot-reload-api 的版本与 vue 的版本冲突 解决方法： 如果vue版本为1.X 那么重新安装 vue-hot-reload-api npm install --save-dev vue-hot-reload-api@^1.3.2 如果不指定默认安装最高版本了，这是个世坑
+
 ### package.json 说明
 ##### vue vue.js
 ##### babel-core 某些代码需要调用Babel的API进行转码
