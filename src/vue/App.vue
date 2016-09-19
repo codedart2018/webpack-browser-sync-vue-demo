@@ -10,7 +10,7 @@
     import Display from './Display.vue'
     import Increment from './Increment.vue'
     //store就是vuex里用来存储组件树用到的所有状态的对象
-    import store from './vuex/store/index';
+    import store from '../vuex/store/index';
 
     export default {
         components: {
