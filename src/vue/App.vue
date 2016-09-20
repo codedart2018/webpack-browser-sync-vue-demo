@@ -20,7 +20,7 @@
         components: {
             Display: Display,
             Increment: Increment,
-            Decrement: Decrement
+            Decrement //这种写法必须在ES6 babel下才行
         },
         // 在根组件加入 store，让它的子组件和 store 连接
         store: store

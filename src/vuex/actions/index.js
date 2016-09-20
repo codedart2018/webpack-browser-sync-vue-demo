@@ -9,8 +9,8 @@ export const incrementCounter = function ({ dispatch, state }) {
 }
 
 export const decrementCounter = function ({ dispatch, state }) {
-    console.log(state.count);
     if(state.count > 0){
         dispatch('DECREMENT', 1)
     }
+    console.log(state.count);
 }
