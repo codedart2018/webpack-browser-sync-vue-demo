@@ -2,6 +2,9 @@
 
 ### Object versions: 1.0.0
 #### src (项目主文件夹)
+##### L--- src/back (项目一些小demo)
+##### L--- src/components (公共组件目录)
+##### L--- src/vuex (状态管理架构)
 #### docs (文档文件夹)
 #### .babelrc (babel 配置文件)
 #### package.json （包配置文件）
