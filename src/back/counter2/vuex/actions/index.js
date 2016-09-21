@@ -1,0 +1,20 @@
+/**
+ * Created by jtq19 on 2016/9/19.
+ */
+// action 会收到 store 作为它的第一个参数
+// 既然我们只对事件的分发（dispatch 对象）感兴趣。（state 也可以作为可选项放入）
+// 我们可以利用 ES6 的解构（destructuring）功能来简化对参数的导入
+
+import * as types from '../mutation-type'
+export const incrementCounter = function ({ dispatch, state }) {
+    //2秒后执行
+    setTimeout(() => {
+        dispatch(types.INCREMENT, 1)
+    }, 1000)
+}
+
+export const decrementCounter = function ({ dispatch, state }) {
+    if(state.Counter.count > 0){
+        dispatch(types.DECREMENT, 1)
+    }
+}
