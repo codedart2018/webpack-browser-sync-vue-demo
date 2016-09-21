@@ -13,7 +13,6 @@
     import Display from './Display.vue'
     import Increment from './Increment.vue'
     import Decrement from './Decrement.vue'
-
     export default {
         components: {
             Display: Display,
